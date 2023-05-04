@@ -4,7 +4,8 @@ const puppeteer = require('puppeteer');
   //Create a browser instance
   const browser = await puppeteer.launch({headless: true}); //false -> no warning | true -> opens browser
   const page = await browser.newPage();
-  const website_url = 'file:///D:/GithubRepositories/NodeJS-HTMLconverterPDF/html-to-pdf/Template.html'
+  //Dynamic URL, changes depending on path of the directory
+  const website_url = require('path').dirname(require.main.filename).toString().split(/\\/).join('/') + '/Template.html';
 
   //Open URL in current page
   await page.goto(website_url, { waitUntil: 'domcontentloaded' });
