@@ -14,7 +14,7 @@ const puppeteer = require('puppeteer');
 
   //Downlaod the PDF
   const pdf = await page.pdf({
-    path: 'pdf/result.pdf',
+    path: 'files/result.pdf',
     //Add Margin to the PDF
     margin: { top: '0px', right: '0px', bottom: '0px', left: '0px' },
     printBackground: true,
